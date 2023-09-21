@@ -28,7 +28,7 @@ const Details = () => {
     return (
         <section className="max-w-6xl mx-auto grid grid-cols-12 gap-5 items-start mt-36 mb-20">
             {/* Dynamic content showed from api */}
-            <div className="col-span-3 border-r border-slate-700 pr-5 pb-10">
+            <div className="col-span-12 lg:col-span-3 lg:border-r border-slate-700 pr-5 pb-10 px-5">
                 <img src={details?.profile_picture} alt="profile-image" className="rounded-full mb-6"/>
                 <h5 className="text-xl font-semibold">{details?.first_name+" "+details?.last_name}</h5>
                 <h5 className="overflow-hidden text-gray-500">{details?.email}</h5>
@@ -44,11 +44,11 @@ const Details = () => {
 
             </div>
             {/* Static content showed for design purpose */}
-            <div className="col-span-9 p-5">
+            <div className="col-span-12 lg:col-span-9 p-5">
                 <h1 className="text-xl font-semibold mb-3 border-b">About</h1>
                 <p className="text-lg">Greetings to all visitors! I'm Md. Mehedi Hasan, a dedicated front-end developer deeply passionate about crafting exceptional web interfaces. Armed with a strong command of HTML, CSS, and JavaScript, I specialize in weaving together captivating online experiences. Utilizing my expertise in React and Vue.js, I design and develop responsive interfaces that not only function seamlessly but also engage users in a meaningful way. I'm excited to collaborate with you and transform your ideas into vibrant and interactive web realities!</p>
                 <h1 className="text-xl font-semibold mb-3 border-b mt-10">Skills</h1>
-                <ul className="grid grid-cols-2 gap-x-20 gap-y-8 mt-10">
+                <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-8 mt-10">
                     {skills && skills?.map((skill, index) =>
                         <li key={index}>
                             <span className="text-lg font-semibold text-gray-500">{skill?.name}</span>
