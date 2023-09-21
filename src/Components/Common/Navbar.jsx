@@ -14,9 +14,10 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { LuMenu } from "react-icons/lu";
+import { Link } from 'react-router-dom';
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Contact'];
+const navItems = ['Home', 'About','Team','Gallery','Contact'];
 
 function Navbar(props) {
   const { window } = props;
@@ -29,7 +30,7 @@ function Navbar(props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
+        <Link to='/'>Profile Tracker</Link>
       </Typography>
       <Divider />
       <List>
@@ -47,9 +48,9 @@ function Navbar(props) {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: 'flex',marginBottom:'70px' }}>
+    <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar component="nav">
+      <AppBar component="nav" sx={{backgroundImage:'linear-gradient(45deg, #1595aa, #0b3351)'}}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -65,7 +66,7 @@ function Navbar(props) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            Profile Tracker
+            <Link to='/'>Profile Tracker</Link>
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (

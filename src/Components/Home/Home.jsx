@@ -3,11 +3,12 @@ import axios from 'axios'
 
 import Cards from "../Common/Cards";
 import { useEffect, useState } from 'react';
+import Header from './Header';
 
 const Home = () => {
     const [profiles, setProfiles] = useState([])
     useEffect(() => {
-        axios.get('https://api.slingacademy.com/v1/sample-data/users')
+        axios.get('https://api.slingacademy.com/v1/sample-data/users?offset=10&limit=20')
             .then(function (response) {
                 setProfiles(response.data.users)
             })
@@ -16,10 +17,13 @@ const Home = () => {
             })
     }, [])
     return (
-        <div className="my-36 container mx-auto grid grid-cols-4 gap-y-28 gap-x-16">
-            {/* Slicing the response incase exit the 12 limit */}
-            {profiles?.slice(0, 12).map((profile, index) => <Cards key={index} details={profile} />)}
-        </div>
+        <section>
+            <Header/>
+            <div className="my-36 max-w-7xl mx-auto grid grid-cols-4 gap-y-36 gap-x-10">
+                {/* Slicing the response incase exit the 12 limit */}
+                {profiles?.slice(0, 12).map((profile, index) => <Cards key={index} details={profile} />)}
+            </div>
+        </section>
     );
 };
 

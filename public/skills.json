@@ -1,0 +1,74 @@
+[
+    {
+        "name":"Html",
+        "value":"99"
+    },
+    {
+        "name":"CSS",
+        "value":"90"
+    },
+    {
+        "name":"JavaScript",
+        "value":"95"
+    },
+    {
+        "name":"Bootstrap",
+        "value":"100"
+    },
+    {
+        "name":"Tailwind",
+        "value":"100"
+    },
+    {
+        "name":"Material UI",
+        "value":"70"
+    },
+    {
+        "name":"React",
+        "value":"95"
+    },
+    {
+        "name":"Vue",
+        "value":"85"
+    },
+    {
+        "name":"Node.js",
+        "value":"65"
+    },
+    {
+        "name":"Express.js",
+        "value":"70"
+    },
+    {
+        "name":"Firebase",
+        "value":"80"
+    },
+    {
+        "name":"MongoDB",
+        "value":"75"
+    },
+    {
+        "name":"Rest API",
+        "value":"100"
+    },
+    {
+        "name":"React Query",
+        "value":"85"
+    },
+    {
+        "name":"Figma",
+        "value":"80"
+    },
+    {
+        "name":"Adobe XD",
+        "value":"70"
+    },
+    {
+        "name":"JQuery",
+        "value":"65"
+    },
+    {
+        "name":"Socket.io",
+        "value":"60"
+    }
+]
