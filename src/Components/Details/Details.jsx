@@ -10,22 +10,21 @@ import { LinearProgress } from "@mui/material";
 const Details = () => {
     const [details, setDetails] = useState({})
     const [skills, setSkills] = useState([])
-    // const skills = ['Html','CSS','JavaScript','Bootstrap','Tailwind','Material UI','Node.js','Express.js','Firebase','React','Vue','MongoDB','Rest API','React Query','Figma','Adobe XD','JQuery','Socket.io']
     const params = useParams().id
-    console.log(params);
     useEffect(() => {
         axios.get(`https://api.slingacademy.com/v1/sample-data/users/${params}`)
             .then(function (response) {
-                console.log(response);
                 setDetails(response.data.user)
             })
             .catch(function (error) {
                 console.log(error);
             })
-        axios.get('../../../public/skills.json')
-        .then((res) => setSkills(res.data))
+        axios.get('/skills.json')
+            .then((res) => {
+            setSkills(res.data)
+        })
         .catch((err)=>console.log(err))
-    },[])
+    }, [])
     return (
         <section className="max-w-6xl mx-auto grid grid-cols-12 gap-5 items-start mt-36 mb-20">
             {/* Dynamic content showed from api */}
@@ -50,7 +49,7 @@ const Details = () => {
                 <p className="text-lg">Greetings to all visitors! I'm Md. Mehedi Hasan, a dedicated front-end developer deeply passionate about crafting exceptional web interfaces. Armed with a strong command of HTML, CSS, and JavaScript, I specialize in weaving together captivating online experiences. Utilizing my expertise in React and Vue.js, I design and develop responsive interfaces that not only function seamlessly but also engage users in a meaningful way. I'm excited to collaborate with you and transform your ideas into vibrant and interactive web realities!</p>
                 <h1 className="text-xl font-semibold mb-3 border-b mt-10">Skills</h1>
                 <ul className="grid grid-cols-2 gap-x-20 gap-y-8 mt-10">
-                    {skills.map((skill, index) =>
+                    {skills && skills?.map((skill, index) =>
                         <li key={index}>
                             <span className="text-lg font-semibold text-gray-500">{skill?.name}</span>
                             <LinearProgress variant="determinate" value={skill.value} sx={{borderRadius:'9999px',height:'7px'}} />
